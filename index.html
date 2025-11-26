@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raquel Rodrigues – Loja de Perfumes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+        .header { display: flex; justify-content: space-between; padding: 15px 30px; background: #222; color: #fff; }
+        .menu a { margin-left: 20px; color: white; text-decoration: none; font-weight: bold; }
+
+        /* MENU NOVO */
+        .menu a:hover { color: #00c4b4; }
+
+        .banner { background: url('BANNER.png') center/cover no-repeat; padding: 120px 20px; text-align: center; color: white; position: relative; z-index: 1; }
+        .btn-banner { background: #00c4b4; padding: 10px 20px; color: #fff; text-decoration: none; border-radius: 5px; }
+
+        .produtos { padding: 40px; }
+        .grid-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+        /* IMAGENS TAMANHO IGUAL */
+        .produto img { width: 100%; height: 250px; object-fit: contain; background: white; padding: 10px; border-radius: 10px; }
+
+        .produto { background: white; padding: 10px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .produto button { background: #00c4b4; border: none; padding: 10px; color: white; width: 100%; border-radius: 5px; cursor: pointer; }
+
+        /* CARRINHO LATERAL */
+        .carrinho {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.35); backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+        /* POPUP */
+        #popup { display: none; position: fixed; top: 20px; right: 20px; background: #00c4b4; padding: 15px; color: #fff; border-radius: 8px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+
+        /* CATÁLOGOS */
+        #catalogos { padding: 40px; }
+        .catalogo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+        .catalogo-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; cursor: pointer; }
+
+        footer { background: #222; color: white; padding: 20px; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div id="popup">Item adicionado ao carrinho!</div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Raquel Rodrigues</div>
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#promocoes">Promoções</a>
+            <a href="#catalogos">Catálogos</a>
+            <a href="#produtos">Produtos</a>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+ <section class="banner" id="inicio">
+    <div class="banner-texto">
+        <h1 style="color:#000;">Perfumes & Cosméticos</h1>
+        <p style="color:#000;">Elegância, frescor e autenticidade em cada fragrância.</p>
+    </div>
+</section>
+
+            
+        </div>
+    </section>
+
+    <!-- CATÁLOGOS -->
+    <section id="catalogos">
+     <h2>Catálogos</h2>
+<div class="catalogo-grid">
+    <a href="link_avon"><img src="AVON.png"></a>
+    <a href="link_boticario"><img src="BOTICARIO.png"></a>
+    <a href="link_marykay"><img src="MARYKAY.png"></a>
+    <a href="link_eudora"><img src="EUDORA.png"></a>
+    <a href="link_natura"><img src="NATURA.jpg"></a>
+    <a href="link_jequiti"><img src="JEQUITI.png"></a>
+    <a href="link_demillus"><img src="DEMILLUS.png"></a>
+    <a href="link_tupperware"><img src="TUPPERWARE.jpg"></a>
+    <a href="link_oui"><img src="OUI.jpg"></a>
+    <a href="link_abelha"><img src="ABELHA.jpg"></a>
+</div>
+
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos em Destaque</h2>
+
+        <div class="grid-produtos">
+            <div class="produto"><img src="p1.jpeg"><h3>Produto 1</h3><p class="preco">R$ 199,90</p><button onclick="addCarrinho('Produto 1',199.90)">Adicionar</button></div>
+            <div class="produto"><img src="p2.jpeg"><h3>Produto 2</h3><p class="preco">R$ 249,90</p><button onclick="addCarrinho('Produto 2',249.90)">Adicionar</button></div>
+            <div class="produto"><img src="p3.jpeg"><h3>Produto 3</h3><p class="preco">R$ 179,90</p><button onclick="addCarrinho('Produto 3',179.90)">Adicionar</button></div>
+            <div class="produto"><img src="p4.jpeg"><h3>Produto 4</h3><p class="preco">R$ 159,90</p><button onclick="addCarrinho('Produto 4',159.90)">Adicionar</button></div>
+            <div class="produto"><img src="p5.jpeg"><h3>Produto 5</h3><p class="preco">R$ 189,90</p><button onclick="addCarrinho('Produto 5',189.90)">Adicionar</button></div>
+            <div class="produto"><img src="p6.jpeg"><h3>Produto 6</h3><p class="preco">R$ 229,90</p><button onclick="addCarrinho('Produto 6',229.90)">Adicionar</button></div>
+            <div class="produto"><img src="p7.jpeg"><h3>Produto 7</h3><p class="preco">R$ 199,90</p><button onclick="addCarrinho('Produto 7',199.90)">Adicionar</button></div>
+            <div class="produto"><img src="p8.jpeg"><h3>Produto 8</h3><p class="preco">R$ 179,90</p><button onclick="addCarrinho('Produto 8',179.90)">Adicionar</button></div>
+        </div>
+    </section>
+
+    <!-- CARRINHO -->
+    <div class="carrinho" id="carrinhoBox">
+        <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleCarrinho()">
+            <h3 style="margin:0;">Carrinho de Compras</h3>
+            <span id="toggleIcon" style="font-size:20px;font-weight:bold;">▼</span>
+        </div>
+        <ul id="listaCarrinho"></ul>
+        <p id="total"></p>
+        <button id="btnComprar">Comprar via WhatsApp</button>
+    </div>
+<script>
+function toggleCarrinho(){
+    let box = document.getElementById('carrinhoBox');
+    let icon = document.getElementById('toggleIcon');
+    if(box.style.height === '40px'){
+        box.style.height = 'auto';
+        icon.innerHTML = '▼';
+    } else {
+        box.style.height = '40px';
+        icon.innerHTML = '▲';
+    }
+}
+</script>
+<!-- FOOTER -->
+    <footer>
+        <p>© 2025 Raquel Rodrigues – Todos os direitos reservados</p>
+    </footer>
+
+<script>
+let carrinho = [];
+function addCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    atualizarCarrinho();
+    mostrarPopup();
+}
+function atualizarCarrinho() {
+    let lista = document.getElementById("listaCarrinho");
+    lista.innerHTML = "";
+    let total = 0;
+    carrinho.forEach((item, index) => {
+        lista.innerHTML += `<li style='display:flex;justify-content:space-between;align-items:center;'>
+            <span>${item.nome} - R$ ${item.preco.toFixed(2)}</span>
+            <button onclick="removerItem(${index})" style='background:none;border:none;font-size:16px;color:#c40000;font-weight:bold;cursor:pointer;'>X</button>
+        </li>`;
+        total += item.preco;
+    });
+    document.getElementById("total").innerText = "Total: R$ " + total.toFixed(2);
+}
+
+function mostrarPopup() {
+    let popup = document.getElementById("popup");
+    popup.style.display = "block";
+    setTimeout(() => popup.style.display = "none", 2000);
+}
+document.getElementById("btnComprar").onclick = function() {
+    let msg = "Olá! Gostaria de finalizar minha compra: %0A";
+    carrinho.forEach((item, index) => {
+        lista.innerHTML += `<li>${item.nome} - R$ ${item.preco.toFixed(2)} <button onclick="removerItem(${index})" style='margin-left:10px;background:#c40000;color:#fff;border:none;padding:3px 6px;border-radius:4px;cursor:pointer;'>X</button></li>`;
+        total += item.preco;
+    });
+    window.open(`https://wa.me/5599999999999?text=${msg}`);
+};
+function removerItem(i){
+    carrinho.splice(i,1);
+    atualizarCarrinho();
+}
+</script>
+</body>
+</html>
